@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmark</title>
+</head>
+<body>
+           <main class="position-relative">
+               <div class="container py-5 d-flex flex-column justify-content-center align-items-center">
+                <h1>Bookmarker</h1>
+                <div class="bookmark w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+                    <h2><i class="fa-solid fa-bookmark me-1"></i>Bookmark your favorite sites<i class="ms-1 fa-solid fa-bookmark"></i></h2>
+                <div class="d-flex flex-column justify-content-center align-items-center w-100">
+                    <div class="mb-3 w-100">
+                        <label for="siteName" class="form-label fw-bold"><i class="fa-solid fa-bookmark me-1"></i>Site Name</label>
+                        <input oninput="validation(this)" type="text" class="form-control " id="siteName" placeholder="Bookmark Name">
+                      </div>
+                      <div class="mb-3 w-100">
+                        <label for="siteUrl" class="form-label fw-bold"><i class="fa-solid fa-link me-1"></i>Site URL</label>
+                        <input oninput="validation(this)" type="text" class="form-control" id="siteUrl" placeholder="Site URL">
+                      </div>
+                      <button onclick="addBookmark()" class="btn btn-sumbit py-2 px-5 ">Sumbit</button>
+                </div>
+                </div>
+                <div class="container py-5">
+                    <div class="search">
+                        <div class="mb-3 w-100">
+                            <label for="search" class="form-label fw-bold"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</label>
+                            <input oninput="searchBookmarks()" type="text" class="form-control" id="search" placeholder="Search">
+                          </div>
+                        </div>
+                    <table class="table table-hover bg-light">
+                        <thead>
+                            <tr class="text-center bg-body-secondary text-capitalize">
+                                <th>Index</th>
+                                <th>Website Name</th>
+                                <th>Visit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableContent" class="text-center">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="message-info z-3 position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none"  id="massage-info">
+                <div class="message-content bg-white p-4 rounded-2 shadow-lg">
+                    <header class="message-header w-100 d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="h4 fw-bold">Alert</h3>
+                        <button class="btn btn-close border-0"  id="closeBtn"></button>
+                    </header>
+                    <p class="m-0 pb-2 fw-bold">
+                        Site Name or Url is not valid, Please follow the rules below :
+                    </p>
+                    <ol class="rules list-unstyled m-0">
+                        <li>
+                            <i class="fa-regular fa-circle-right p-2"></i>
+                            Site name must contain at least 3 characters
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-circle-right p-2"></i>
+                            Site URL must be a valid one
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+           </main>
+        
+           <script src="
+           https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js
+           "></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
